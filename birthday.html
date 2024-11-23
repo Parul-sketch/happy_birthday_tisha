@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Gift</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #4B4B4B;
+            background: linear-gradient(120deg, #F6D6D6, #F6F7C4, #A1EEBD, #7BD3EA);
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-top: 20px;
+            color: #4B4B4B;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #4B4B4B;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            background: #7BD3EA;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background: #A1EEBD;
+            transform: scale(1.05);
+        }
+
+        /* Card Container */
+        .section {
+            padding: 50px 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            color: #4B4B4B;
+        }
+
+        /* Flip Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .flip-card {
+            width: 180px;
+            height: 180px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .flip-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .flip-card-back {
+            background: #A1EEBD;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            transform: rotateY(180deg);
+            border-radius: 15px;
+        }
+
+        /* Hidden Section */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Welcome Section -->
+    <div id="welcome" class="section">
+        <h1>🎉 Happy Birthday, Tisha! 🎉</h1>
+        <div class="card">
+            <p>
+                Welcome to your special birthday website! It’s a day to celebrate YOU! Click the button below to begin
+                your birthday journey. 💝
+            </p>
+        </div>
+        <button onclick="revealMessage()">Click Here</button>
+    </div>
+
+    <!-- Message Section -->
+    <div id="messageSection" class="section hidden">
+        <h2>💌</h2>
+        <div class="card">
+            <p>
+                Dear Tisha!,<br>
+                Happy Birthday Tisha!!!
+                Can't believe you're already 13 ...
+                You have aged so nicely and I am so proud of you
+                Wish you achieve everything you want in life
+                Know that I love you to stars and beyond
+                Happy birthday my_little_star. 💖
+            </p>
+        </div>
+        <button onclick="revealGallery()">Our Cherished Memories</button>
+    </div>
+
+    <!-- Gallery Section -->
+    <!-- Gallery Section -->
+    <div id="gallerySection" class="section hidden">
+        <h2>Photo Gallery 📸</h2>
+        <div class="gallery">
+            <div class="flip-card" onclick="flipCard(this)">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="tisha1.jpg" alt="Tisha Smiling">
+                    </div>
+                    <div class="flip-card-back">
+                        🎂 February 16, 2021
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card" onclick="flipCard(this)">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="tisha2.jpg" alt="Tisha Memories 2020-2024">
+                    </div>
+                    <div class="flip-card-back">
+                        🎉 Tisha: 2020 to 2024
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card" onclick="flipCard(this)">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="tisha3.jpg" alt="Tisha Memories 2020-2024">
+                    </div>
+                    <div class="flip-card-back">
+                        🦋 Tisha: 2020 to 2024
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="revealSurprise()">See the Final Surprise</button>
+    </div>
+
+    <!-- Final Surprise -->
+    <div id="finalSurprise" class="section hidden">
+        <h2>🎉 You’re Amazing! 🎉</h2>
+        <div class="card">
+            <p>
+                Happy Birthday bache
+            </p>
+            <p>Finally a teen... can't believe tu itna bda ho gya... you're still and would always be a kid to me
+            </p>
+
+            </p>
+            I'm sorry zyada kuch nhi kar pa rha abhi tere liye but just wait bacha...I promise I'll make your birthdays
+            worth remembering
+            </p>
+            <p>
+                Love you a lot...aise he apni positivity se mera dimag khrab karti reh
+            </p>
+            <p>
+                Ache se padh...enjoy your life do and pursue whatever you want
+            </p>
+            <p>
+                Just remember I'll always back you up
+            </p>
+            <p>
+                Ldai Kam Kiya kar mujhse bas...aur thori shaitani Kam kar
+            </p>
+            <p>
+                Once again happy birthday mera bacha
+            </p>
+
+
+            Love you
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function revealMessage() {
+            document.getElementById('welcome').classList.add('hidden');
+            document.getElementById('messageSection').classList.remove('hidden');
+        }
+
+        function revealGallery() {
+            document.getElementById('messageSection').classList.add('hidden');
+            document.getElementById('gallerySection').classList.remove('hidden');
+        }
+
+        function revealSurprise() {
+            document.getElementById('gallerySection').classList.add('hidden');
+            document.getElementById('finalSurprise').classList.remove('hidden');
+        }
+
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+        }
+    </script>
+</body>
+
+</html>
